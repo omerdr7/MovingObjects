@@ -26,7 +26,7 @@ public class Panel extends JPanel implements ActionListener {
         this.setPreferredSize(new Dimension(PANEL_WİTDH, PANEL_HEİGHT));
         bird = new ImageIcon("C:\\Users\\omerf\\Downloads\\images (1).png").getImage();
         backgroundImage = new ImageIcon("C:\\Users\\omerf\\Downloads\\sky.png").getImage();
-        timer = new Timer(10, null);
+        timer = new Timer(10, this);
         timer.start();
     }
 

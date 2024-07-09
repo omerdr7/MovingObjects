@@ -1,6 +1,10 @@
 package movingobjects;
 
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Image;
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
@@ -15,4 +19,19 @@ public class Panel extends JPanel {
     Image bird;
     Image backgroundImage;
     Timer timer;
+
+    public Panel() {
+        this.setPreferredSize(new Dimension(PANEL_WİTDH, PANEL_HEİGHT));
+        bird = new ImageIcon("C:\\Users\\omerf\\Downloads\\images (1).png").getImage();
+        backgroundImage = new ImageIcon("C:\\Users\\omerf\\Downloads\\sky.png").getImage();
+        timer = new Timer(10, null);
+        timer.start();
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        Graphics2D g2 = (Graphics2D) g;
+        g2.drawImage(backgroundImage, 0, 0, null);
+        g2.drawImage(bird, x, y, null);
+    }
 }
